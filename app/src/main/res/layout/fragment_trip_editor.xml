@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fillViewport="true"
+tools:context=".ui.editor.TripEditorFragment">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_size">
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+    <TextView
+        android:id="@+id/tvEditorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCancel"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/create_new_trip"
+        android:textSize="@dimen/text_medium"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tvDestinationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEditorTitle"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/destination"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/etDestination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvDestinationLabel"
+        android:layout_marginTop="@dimen/card_elevation"
+        android:hint="@string/enter_destination"
+        android:inputType="textCapWords"
+        android:background="@drawable/edittext_rounded_border"
+        android:padding="@dimen/_12dp"
+        android:autofillHints="addressCity" />
+
+    <TextView
+        android:id="@+id/tvStartDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etDestination"
+        android:layout_marginTop="@dimen/margin_size"
+        android:text="@string/start_date"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/etStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvStartDateLabel"
+        android:layout_marginTop="@dimen/card_elevation"
+        android:hint="@string/select_start_date"
+        android:inputType="none"
+        android:focusable="false"
+        android:cursorVisible="false"
+        android:background="@drawable/edittext_rounded_border"
+        android:padding="@dimen/_12dp"
+        tools:text="Jul 03, 2025"/>
+
+    <TextView
+        android:id="@+id/tvEndDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etStartDate"
+        android:layout_marginTop="@dimen/margin_size"
+        android:text="@string/end_date"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/etEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEndDateLabel"
+        android:layout_marginTop="@dimen/card_elevation"
+        android:hint="@string/select_end_date"
+        android:inputType="none"
+        android:focusable="false"
+        android:cursorVisible="false"
+        android:background="@drawable/edittext_rounded_border"
+        android:padding="@dimen/_12dp"
+        tools:text="Jul 09, 2025"/>
+
+    <TextView
+        android:id="@+id/tvFlightsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEndDate"
+        android:layout_marginTop="@dimen/margin_size"
+        android:text="@string/flights"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/etFlights"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvFlightsLabel"
+        android:layout_marginTop="@dimen/card_elevation"
+        android:hint="@string/flight_details_e_g_airline_flight_numbers_times"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:gravity="top|start"
+        android:background="@drawable/edittext_rounded_border"
+        android:padding="@dimen/_12dp"/>
+
+    <TextView
+        android:id="@+id/tvAccommodationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etFlights"
+        android:layout_marginTop="@dimen/margin_size"
+        android:text="@string/accommodation"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/etAccommodation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAccommodationLabel"
+        android:layout_marginTop="@dimen/card_elevation"
+        android:hint="@string/hotel_airbnb_etc"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:gravity="top|start"
+        android:background="@drawable/edittext_rounded_border"
+        android:padding="@dimen/_12dp"/>
+
+    <TextView
+        android:id="@+id/tvNotesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etAccommodation"
+        android:layout_marginTop="@dimen/margin_size"
+        android:text="@string/notes"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/etNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNotesLabel"
+        android:layout_marginTop="@dimen/card_elevation"
+        android:hint="@string/any_additional_notes_for_the_trip"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:gravity="top|start"
+        android:background="@drawable/edittext_rounded_border"
+        android:padding="@dimen/_12dp"/>
+
+    <Button
+        android:id="@+id/btnAddImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNotes"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/button_size"
+        android:text="@string/add_images"
+        android:textColor="@android:color/black"
+        android:background="@drawable/button_rounded_primary"
+        android:paddingVertical="@dimen/_12dp"/>
+
+    <HorizontalScrollView
+        android:id="@+id/svImagePreviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnAddImages"
+        android:layout_marginTop="@dimen/margin_size"
+        android:visibility="gone">
+        <LinearLayout
+            android:id="@+id/llImagePreviews"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/card_elevation"
+            android:paddingEnd="@dimen/card_elevation"/>
+    </HorizontalScrollView>
+
+    <ProgressBar
+        android:id="@+id/pbImageUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/svImagePreviews"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_small"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnClearImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pbImageUpload"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:text="@string/clear_images"
+        android:textColor="@android:color/black"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:visibility="gone"/>
+
+</RelativeLayout>
+</ScrollView>

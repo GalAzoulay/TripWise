@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_above="@+id/fabAddTrip">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_size">
+
+            <TextView
+                android:id="@+id/tvAppTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
+                android:textColor="@color/purple_500"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/margin_size"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivUserIcon"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:src="@drawable/ic_user_circle"
+                android:contentDescription="@string/user_profile"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/tvAppTitle"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="@dimen/_2dp"/>
+
+            <TextView
+                android:id="@+id/tvUpcomingTripsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAppTitle"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/upcoming_trips"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvUpcomingTrips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvUpcomingTripsTitle"
+                android:layout_marginTop="@dimen/_10dp"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_trip" />
+
+
+            <TextView
+                android:id="@+id/tvNoUpcomingTrips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvUpcomingTrips"
+                android:layout_marginTop="@dimen/margin_size"
+                android:text="@string/no_upcoming_trips_tap_to_add_one"
+                android:textColor="@android:color/darker_gray"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tvPastTripsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvNoUpcomingTrips"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/past_trips"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPastTrips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPastTripsTitle"
+                android:layout_marginTop="@dimen/_10dp"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_trip"/>
+
+            <TextView
+                android:id="@+id/tvNoPastTrips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvPastTrips"
+                android:layout_marginTop="@dimen/margin_size"
+                android:text="@string/no_past_trips_recorded"
+                android:textColor="@android:color/darker_gray"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <View
+                android:id="@+id/spacer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80dp"
+                android:layout_below="@id/tvNoPastTrips"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabAddTrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_size"
+        android:text="@string/add_trip"
+        android:textColor="@android:color/white"
+        app:icon="@drawable/ic_add"
+        app:iconTint="@android:color/white"
+        android:backgroundTint="@color/purple_500"
+        app:cornerRadius="@dimen/margin_large"
+        android:elevation="@dimen/_6dp"
+        app:fabSize="normal"/>
+
+</RelativeLayout>

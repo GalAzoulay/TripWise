@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.tripwise.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_tripEditorFragment"
+            app:destination="@id/tripEditorFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tripTimelineFragment"
+            app:destination="@id/tripTimelineFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="com.example.tripwise.ui.friends.FriendsFragment"
+        android:label="Friends"
+        tools:layout="@layout/fragment_friends" >
+        <action
+            android:id="@+id/action_friendsFragment_to_profileFragment"
+            app:destination="@id/profileFragment"/>
+        <action
+            android:id="@+id/action_friendsFragment_to_shareTripDialogFragment"
+            app:destination="@id/shareTripDialogFragment"/>
+        <action
+            android:id="@+id/action_friendsFragment_to_searchUsersFragment"
+            app:destination="@id/searchUsersFragment" />
+        <action
+            android:id="@+id/action_friendsFragment_to_photoViewerFragment"
+            app:destination="@id/photoViewerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchUsersFragment"
+        android:name="com.example.tripwise.ui.friends.SearchUsersFragment"
+        android:label="Search Users"
+        tools:layout="@layout/fragment_search_users">
+        <action
+            android:id="@+id/action_searchUsersFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shareTripDialogFragment"
+        android:name="com.example.tripwise.ui.friends.ShareTripDialogFragment"
+        android:label="ShareTripDialog"
+        tools:layout="@layout/dialog_share_trip">
+        <argument
+            android:name="sharedTrip"
+            app:argType="com.example.tripwise.data.SharedTrip"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/photoViewerFragment"
+        android:name="com.example.tripwise.ui.friends.PhotoViewerFragment"
+        android:label="Photo Viewer"
+        tools:layout="@layout/fragment_photo_viewer">
+        <argument
+            android:name="photoUrls"
+            app:argType="string[]" />
+        <argument
+            android:name="startPosition"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.example.tripwise.ui.messages.MessagesFragment"
+        android:label="Messages"
+        tools:layout="@layout/fragment_messages" >
+        <action
+            android:id="@+id/action_messagesFragment_to_friendsListFragment"
+            app:destination="@id/friendsListFragment" />
+        <action
+            android:id="@+id/action_messagesFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/friendsListFragment"
+        android:name="com.example.tripwise.ui.messages.FriendsListFragment"
+        android:label="Start a conversation"
+        tools:layout="@layout/fragment_friends_list">
+        <action
+            android:id="@+id/action_friendsListFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.tripwise.ui.messages.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="otherUserId"
+            app:argType="string" />
+        <argument
+            android:name="otherUsername"
+            app:argType="string" />
+        <argument
+            android:name="conversationId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.tripwise.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.tripwise.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <argument
+            android:name="userId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_profileFragment_to_photoViewerFragment"
+            app:destination="@id/photoViewerFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_shareTripDialogFragment"
+            app:destination="@id/shareTripDialogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tripEditorFragment"
+        android:name="com.example.tripwise.ui.editor.TripEditorFragment"
+        android:label="Trip Editor"
+        tools:layout="@layout/fragment_trip_editor">
+        <argument
+            android:name="trip"
+            app:argType="com.example.tripwise.data.Trip"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tripTimelineFragment"
+        android:name="com.example.tripwise.ui.timeline.TripTimelineFragment"
+        android:label="Trip Timeline"
+        tools:layout="@layout/fragment_trip_timeline">
+        <argument
+            android:name="trip"
+            app:argType="com.example.tripwise.data.Trip"
+            app:nullable="false"/>
+        <action
+            android:id="@+id/action_tripTimelineFragment_to_timelineEditorFragment"
+            app:destination="@id/timelineEditorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/timelineEditorFragment"
+        android:name="com.example.tripwise.ui.timelineeditor.TimelineEditorFragment"
+        android:label="Timeline Editor"
+        tools:layout="@layout/fragment_timeline_editor">
+        <argument
+            android:name="trip"
+            app:argType="com.example.tripwise.data.Trip"
+            app:nullable="false"/>
+        <argument
+            android:name="selectedDate"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="timelineItem"
+            app:argType="com.example.tripwise.data.TimelineItem"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+
+    <action android:id="@+id/action_global_settingsFragment" app:destination="@id/settingsFragment" />
+
+</navigation>
+

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "425483151190",
+    "project_id": "tripwise-app-2025",
+    "storage_bucket": "tripwise-app-2025.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425483151190:android:a365d470cd5a7e020d18f7",
+        "android_client_info": {
+          "package_name": "com.example.tripwise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425483151190-nbtbpq0s52idpgulo4uorlu4jqutrfec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tripwise",
+            "certificate_hash": "3588ad3b5e5adca2c79f38f545147b562fa946d9"
+          }
+        },
+        {
+          "client_id": "425483151190-2a45lpd5ilprdcmnrlh4oab47k02bjra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYVnwklPRynkPFD7N9Ko0rDUsVx055yLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425483151190-2a45lpd5ilprdcmnrlh4oab47k02bjra.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

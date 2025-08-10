@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_small"
+    app:cardCornerRadius="@dimen/margin_small"
+    app:cardElevation="@dimen/_2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_size">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/tvTimelineTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_18sp"
+                android:textStyle="bold"
+                tools:text="10:00 AM" />
+
+            <TextView
+                android:id="@+id/tvTimelineDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/margin_size"
+                android:textSize="@dimen/_18sp"
+                tools:text="Flight Departure" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/btnEditTimelineItem"
+                    android:layout_width="@dimen/button_size"
+                    android:layout_height="@dimen/button_size"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_edit"
+                    app:tint="?attr/colorOnSurface"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/edit_timeline_item" />
+
+                <ImageButton
+                    android:id="@+id/btnDeleteTimelineItem"
+                    android:layout_width="@dimen/delete_button_timeline_size"
+                    android:layout_height="@dimen/delete_button_timeline_size"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_delete"
+                    app:tint="?attr/colorError"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/delete_timeline_item" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTimelineNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_small"
+            android:textColor="?android:attr/textColorSecondary"
+            tools:text="Remember to check in 2 hours before the flight." />
+
+        <ImageView
+            android:id="@+id/ivTimelineImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="@dimen/margin_small"
+            android:visibility="gone"
+            tools:src="@tools:sample/backgrounds/scenic"
+            android:contentDescription="@string/timeline_image" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.timelineeditor.TimelineEditorFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_size">
+
+        <Button
+            android:id="@+id/btnTimelineEditorCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+        <Button
+            android:id="@+id/btnTimelineEditorSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+        <TextView
+            android:id="@+id/tvTimelineEditorTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnTimelineEditorCancel"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/add_timeline_item"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTimelineEditorTitle"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/date"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDateLabel"
+            android:layout_marginTop="@dimen/card_elevation"
+            android:hint="May 10"
+            android:inputType="date"
+            android:background="@drawable/edittext_rounded_border"
+            android:padding="@dimen/_12dp"/>
+
+        <TextView
+            android:id="@+id/tvTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etDate"
+            android:layout_marginTop="@dimen/margin_size"
+            android:text="@string/time"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/etTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTimeLabel"
+            android:layout_marginTop="@dimen/card_elevation"
+            android:hint="@string/enter_time"
+            android:inputType="time"
+            android:background="@drawable/edittext_rounded_border"
+            android:padding="@dimen/_12dp"/>
+
+        <TextView
+            android:id="@+id/tvDescriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etTime"
+            android:layout_marginTop="@dimen/margin_size"
+            android:text="@string/description"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDescriptionLabel"
+            android:layout_marginTop="@dimen/card_elevation"
+            android:hint="@string/enter_description"
+            android:inputType="textCapSentences"
+            android:background="@drawable/edittext_rounded_border"
+            android:padding="@dimen/_12dp"/>
+
+        <TextView
+            android:id="@+id/tvNotesEditorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etDescription"
+            android:layout_marginTop="@dimen/margin_size"
+            android:text="@string/notes"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/etNotesEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNotesEditorLabel"
+            android:layout_marginTop="@dimen/card_elevation"
+            android:hint="@string/any_additional_notes_for_the_trip"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:gravity="top|start"
+            android:background="@drawable/edittext_rounded_border"
+            android:padding="@dimen/_12dp"/>
+
+        <Button
+            android:id="@+id/btnAddImagesTimeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etNotesEditor"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/button_rounded_primary"
+            android:paddingVertical="@dimen/_12dp"
+            android:text="@string/add_images"
+            android:textColor="@android:color/black" />
+
+        <HorizontalScrollView
+            android:id="@+id/svImagePreviewsTimeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnAddImagesTimeline"
+            android:layout_marginTop="@dimen/margin_size"
+            android:visibility="gone">
+            <LinearLayout
+                android:id="@+id/llImagePreviewsTimeline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/card_elevation"
+                android:paddingEnd="@dimen/card_elevation"/>
+        </HorizontalScrollView>
+
+        <ProgressBar
+            android:id="@+id/pbImageUploadTimeline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/svImagePreviewsTimeline"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_small"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnClearImagesTimeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pbImageUploadTimeline"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/clear_images"
+            android:textColor="@android:color/black"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_size"
+    tools:context=".ui.timeline.TripTimelineFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/margin_size">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/margin_small"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="?attr/colorOnSurface"
+            android:contentDescription="@string/back"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:id="@+id/tvTripTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/trip_destination"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/button_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/margin_size">
+
+        <ImageButton
+            android:id="@+id/btnPreviousDay"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/margin_small"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="?attr/colorOnSurface"
+            android:contentDescription="@string/backtopreviousday"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:id="@+id/tvCurrentDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_gravity="center"
+            android:text="Monday, Jan 01, 2024"
+            android:textSize="@dimen/text_size"
+            android:textStyle="italic" />
+
+        <ImageButton
+            android:id="@+id/btnNextDay"
+            android:layout_width="@dimen/button_right_timeline_size"
+            android:layout_height="@dimen/button_right_timeline_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/margin_small"
+            android:src="@drawable/ic_arrow_right"
+            app:tint="?attr/colorOnSurface"
+            android:contentDescription="@string/nextday"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNoTimelineItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_timeline_items_for_this_day_click_to_add_one"
+        android:gravity="center"
+        android:padding="@dimen/margin_size"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTimelineItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:nestedScrollingEnabled="false"
+        tools:listitem="@layout/item_timeline" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddTimelineItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/margin_size"
+        android:contentDescription="@string/add_timeline_item"
+        android:src="@drawable/ic_add"
+        app:fabSize="normal" />
+
+</LinearLayout>
