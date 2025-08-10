@@ -114,9 +114,7 @@ class HomeFragment : Fragment() {
         profileListener?.remove()
 
         userId?.let { uid ->
-            profileDocRef = db.collection("artifacts").document(appId)
-                .collection("users").document(uid)
-                .collection("profile").document("info")
+            profileDocRef = db.collection("users").document(uid)
 
             profileListener = profileDocRef.addSnapshotListener { snapshot, e ->
                 if (e != null) {
