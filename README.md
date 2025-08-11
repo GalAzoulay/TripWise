@@ -33,7 +33,7 @@ TripWise is a mobile application designed to help you **plan, organize, and shar
 
 ---
 
-## Screenshots
+## Screenshots 📷
 
 ### Login Screen:
 <img src="https://github.com/user-attachments/assets/293e4f81-1ee0-4ad9-8f3f-cbf11cb04c4b" width="144" height="330"/>
